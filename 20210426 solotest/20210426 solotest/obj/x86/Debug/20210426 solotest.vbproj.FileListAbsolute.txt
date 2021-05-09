@@ -1,0 +1,11 @@
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\bin\Debug\20210426 solotest.exe.config
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\bin\Debug\20210426 solotest.exe
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\bin\Debug\20210426 solotest.pdb
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\bin\Debug\20210426 solotest.xml
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\obj\x86\Debug\WindowsApplication1.Form2.resources
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\obj\x86\Debug\20210426 solotest.vbproj.GenerateResource.Cache
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\obj\x86\Debug\20210426 solotest.exe
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\obj\x86\Debug\20210426 solotest.xml
+C:\Users\Win10\documents\visual studio 2010\Projects\20210426 solotest\20210426 solotest\obj\x86\Debug\20210426 solotest.pdb

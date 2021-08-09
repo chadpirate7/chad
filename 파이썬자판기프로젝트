@@ -1,0 +1,182 @@
+print("------자판기를 가동합니다------")
+print("음료수종류는 콜라, 제로콜라, 사이다, 제로사이다, 환타, 탄산수, 캔커피, 파워에이드 있습니다 ")
+print("콜라 1번 1500원, 제로콜라 2번 1500원, 사이다 3번 1500원, 제로사이다 4번 1500원, 환타 5번 1300원, 탄산수 6번 2000원, 캔커피 7번 1200원, 파워에이드 8번 1400원")
+cola = 5
+zerocola = 5
+cider = 5
+zerocider = 5
+fanta = 5
+sparklingwater = 5
+coffee = 5
+powerade = 5
+
+while(1):
+    price = 0
+    money = int(input("돈을 넣어주세요"))
+    drink = int(input("음료 종류를 선택해주세요 0번은종료입니다"))
+
+    if drink == 0:
+        break
+
+    if drink == 1:
+
+        if cola <= 0:
+            print("재고가 부족합니다")
+            break
+
+        if cola <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+
+        if money == 1500:
+            print("콜라나옵니다")
+            cola-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+          continue
+
+        if money > 1500:
+            print("콜라 나오고 거스름돈드립니다")
+            cola-=1
+              
+    if drink == 2:
+
+        if zerocola <= 0:
+            print("재고가 부족합니다")
+            break
+
+        if zerocola <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+        if money == 1500:
+            print("콜라나옵니다")
+            zerocola-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+          continue
+
+        if money > 1500:
+            print("제로콜라 나오고 거스름돈드립니다")
+            zerocola-=1
+
+    if drink == 3:
+
+        if cider <= 0:
+            print("재고가 부족합니다")
+            break
+
+        if cider <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+        if money == 1500:
+            print("사이다나옵니다")
+            cider-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+
+        if money > 1500:
+              print("사이다 나오고 거스름돈드립니다")
+              cider-=1
+
+    if drink == 4:
+        
+        if zerocider <= 0:
+            print("재고가 부족합니다")
+            break
+
+        if zerocider <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+        if money == 1500:
+            print("제로사이다나옵니다")
+            zerocider-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+
+        if money > 1500:
+              print("제로사이다 나오고 거스름돈드립니다")
+              zerocider-=1
+
+    if drink == 5:
+        
+        if fanta <= 0:
+            print("재고가 부족합니다")
+            break
+
+        if fanta <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+        if money == 1500:
+            print("환타나옵니다")
+            fanta-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+
+        if money > 1500:
+              print("환타 나오고 거스름돈드립니다")
+              fanta-=1
+
+    if drink == 6:
+        
+        if sparklingwater <= 0:
+            print("재고가 부족합니다")
+            break
+
+        if sparklingwater <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+        if money == 1500:
+            print("탄산수나옵니다")
+            sparklingwater-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+
+        if money > 1500:
+              print("탄산수 나오고 거스름돈드립니다")
+              sparklingwater-=1
+
+    if drink == 7:
+        
+        if coffee <= 0:
+            print("재고가 부족합니다")
+            break
+
+        if coffee <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+        if money == 1500:
+            print("커피나옵니다")
+            coffee-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+
+        if money > 1500:
+              print("커피 나오고 거스름돈드립니다")
+              coffee-=1
+
+    if drink == 8:
+        
+        if powerade <= 0:
+            print("재고가 부족합니다")
+            break
+            
+        if powerade <= 2:
+            print("수량이 2개이하로 남았습니다")
+
+        if money == 1500:
+            print("파워에이드나옵니다")
+            powerade-=1
+        
+        if money < 1500:
+          print("잔액이 부족합니다")
+
+        if money > 1500:
+              print("파워에이드 나오고 거스름돈드립니다")
+              powerade-=1

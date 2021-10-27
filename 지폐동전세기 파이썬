@@ -1,0 +1,22 @@
+print("금액을 입력하세요(10만원 아래로)")
+insert = input()
+insert = int(insert)
+b = insert / 10000
+insert = insert % 10000
+c = insert / 5000
+insert = insert % 5000
+d = insert / 1000
+insert = insert % 1000
+e = insert / 500
+insert = insert % 500
+f = insert / 100
+insert = insert % 100
+g = insert / 10
+insert = insert % 10
+print("만원권갯수 : ", int(b))
+print("오천원권갯수 : ", int(c))
+print("천원권갯수 : ", int(d))
+print("오백원갯수 : ", int(e))
+print("백원갯수 : ", int(f))
+print("십원갯수 : ", int(g))
+print("잔액 :" , insert)

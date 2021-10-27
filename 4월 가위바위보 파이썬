@@ -1,0 +1,23 @@
+import random
+choice = ["가위", "바위", "보"]
+while True :
+    winner = "사용자"
+    comp_num = random.randint(0,2)
+    comp_choice = choice[comp_num]
+    user_choice = input("골라주세요(가위, 바위, 보): ")
+    if user_choice not in choice:
+        print("다시 입력해주세요")
+        continue
+    user_num = choice.index(user_choice) 
+    if comp_num == 0 and user_num == 2:
+        winner = "컴퓨터"
+    elif comp_num == 2 and user_num == 0:
+        pass
+    else:
+        if comp_num > user_num:
+            winner = "컴퓨터"
+    print("컴퓨터: %s, 사용자: %s" % (comp_choice, user_choice))
+    if comp_num == user_num:
+        print("비겼습니다.")
+    else:
+        print("%s가 이겼습니다." % winner) 

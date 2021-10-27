@@ -1,0 +1,11 @@
+a = int(input("숫자를 입력해주세요"))
+
+for x in range(1, a+1):
+
+    for y in range(a-x):
+        print(" ", end="")
+
+    for z in range(x*2-1):
+        print("*", end="")
+        
+    print()

@@ -1,0 +1,8 @@
+a = int(input("첫번째수를 입력하세요"))
+b = int(input("두번째수를 입력하세요"))
+c = int(input("세번째수를 입력하세요"))
+
+d = list((a, b, c))
+d.sort()
+
+print(d[1])

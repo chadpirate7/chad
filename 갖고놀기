@@ -1,0 +1,32 @@
+a = "python"
+print(a*2)
+print(a[0], a[1], a[2], a[3], a[4], a[5])
+print(a[0:4])
+number = 10
+day = "three"
+print("i eat %d apple %s days" % (number,day))
+print(a.count("o"))
+print(a.find("o"))
+print(a.index("o"))
+print(a.join("abcd"))
+print(a.upper())
+print(a.lower())
+print(" "+a+" ")
+print(a.strip())
+print(a.replace("py","fe"))
+print(a.split())
+print(a.split(':'))
+d = "life is good"
+print(d.split())
+d = "life:is:good"
+print(d.split())
+print(d.split(':'))
+odd = [1,3,5,7,9]
+print(odd)
+print(odd[0])
+print(odd[0:2])
+print(odd[:2])
+print(odd[2:])
+odd2 = [2,3,4]
+print(odd+odd2)
+print(odd*3)

@@ -1,0 +1,11 @@
+class sample():
+    def product(self, x , y):
+        return x*y
+    def product(self, x , y, z):
+        return x*y*z
+    def product(self, x , y, z, p):
+        return x*y*z*p
+
+c = sample()
+
+a = c.product(1,2,3,4)

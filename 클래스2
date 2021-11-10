@@ -1,0 +1,11 @@
+class person:
+    def greeting(self):
+        print("안녕하세요")
+
+class student(person):
+    def greeting(self):
+        super().greeting()
+        print("저는 학생입니다")
+
+james = student()
+james.greeting()

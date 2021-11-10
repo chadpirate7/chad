@@ -1,0 +1,16 @@
+class person:
+    def __init__(self, name=None, age=None, gender=None, person_from_str=None):
+        if person_from_str:
+            person = person_from_str.split('.')
+            self.name = person [0]
+            self.age = int(person[1])
+            self.gender = bool(int(person[2]))
+        else:
+            self.name = name
+            self.age = age
+            self.gender = gender
+
+a = person()
+b = person(1,2,3)
+print(a.name)
+print(b.name)

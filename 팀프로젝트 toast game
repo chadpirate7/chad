@@ -1,0 +1,186 @@
+import random
+import openpyxl
+from openpyxl import load_workbook
+
+class Toast :
+    def Start():
+        file = "Toast.xlsx"
+        wb = openpyxl.Workbook()
+        wb.active.title = 'Sheet1'
+        w1 = wb['Sheet1']
+        w1['A1'] = '식빵'
+        w1['B1'] = '계란'
+        w1['C1'] = '치즈'
+        w1['D1'] = '슬라이스햄'
+        w1['E1'] = '잔액'
+        w1['A2'] = 20
+        w1['B2'] = 30
+        w1['C2'] = 20
+        w1['D2'] = 20
+        w1['E2'] = 10000
+        w1['E3'] = file
+        wb.save(file)
+
+    def Game():
+        eggToast = ["식빵", "계란", "식빵"]
+        hamToast = ["식빵", "슬라이스햄", "치즈", "식빵"]
+        cheeseToast = ["식빵", "치즈", "식빵"]
+        menu = ["에그토스트", "햄치즈토스트", "치즈토스트"]
+
+        file = "Toast.xlsx"
+
+        wb = load_workbook(filename=file)
+        ws = wb.active
+        ws = wb['Sheet1']
+
+        br = ws.cell(row=2, column=1)
+        eg = ws.cell(row=2, column=2)
+        ch = ws.cell(row=2, column=3)
+        ha = ws.cell(row=2, column=4)
+        mo = ws.cell(row=2, column=5)
+
+        bread = br.value
+        egg = eg.value
+        cheese = ch.value
+        ham = ha.value
+        money = mo.value
+
+        print("------토스트만들기 게임을 시작합니다!------")
+        print("2500", "2000", "1500")
+
+        while True :
+            number = input("# 1. 게임 시작\n# 2. 마트 가기\n# 3. 재고 확인\n# 4. 저장 및 종료\n# 숫자 입력 : ")
+
+            if(number == "1") :
+                comp_num = random.randint(0,2)
+                comp_choice = menu[comp_num]
+                print(comp_choice)
+
+                if(comp_choice == menu[0]) : # 재고확인 할 때, 수량이 더 많이 남아있을 때만 사용.
+                    if egg >= 1 and bread >= 2:
+                        for i in range(len(eggToast)) :
+                            e = input("# 재료 : ")
+                            if e == eggToast[i] :
+                                if i == 2 :
+                                    money+=2300
+                                    egg-=1
+                                    bread-=2
+                                    print("# 성공")
+                            else :
+                                print("# 실패")
+                                egg-=1
+                                bread-=2
+                                break
+                    else:
+                        print('재료가 부족합니다.')
+
+                if(comp_choice == menu[1]) :
+                    if ham >= 1 and cheese >= 1 and bread >= 2:
+                        for i in range(len(hamToast)):
+                            e = input("# 재료 : ")
+                            if e == hamToast[i]:
+                                if i == 3:
+                                    money+=2000
+                                    ham-=1
+                                    cheese-=1
+                                    bread-=2
+                                    print("# 성공")
+                            else:
+                                print("# 실패")
+                                ham-=1
+                                cheese-=1
+                                bread-=2
+                                break
+                    else:
+                        print('재료가 부족합니다.')
+
+                if(comp_choice == menu[2]) :
+                    if cheese >= 1 and bread >= 2:
+                        for i in range(len(cheeseToast)):
+                            e = input("# 재료 : ")
+                            if e == cheeseToast[i]:
+                                if i == 2:
+                                    money+=1500
+                                    cheese-=1
+                                    bread-=2
+                                    print("# 성공")
+                            else:
+                                print("# 실패")
+                                cheese-=1
+                                bread-=2
+                                break
+                    else:
+                        print('재료가 부족합니다.')
+
+            elif(number == "2") : # money를 비교해서 가격보다 크거나 같을 때만 주문완료 되게.
+                print("# 잔액 : ", money)
+                mart = int(input("# 마트쇼핑 시작 1.계란30개, 2.햄20개 3.치즈20장 4.빵20장"))
+                if mart == 1 :
+                    egg += 30
+                    if money >= 3000:
+                        money -= 3000
+                        print("# 계란한판 주문완료")
+                    else:
+                        print('잔액이 부족합니다.')
+
+                elif mart == 2:
+                    ham += 20
+                    if money >= 4000:
+                        money -= 4000
+                        print("# 햄20장 주문완료")
+                    else:
+                        print('잔액이 부족합니다.')
+
+                elif mart == 3:
+                    cheese += 20
+                    if money >= 2000:
+                        money -= 2000
+                        print("# 치즈20장 주문완료")
+                    else:
+                        print('잔액이 부족합니다.')
+
+                elif mart == 4:
+                    bread += 20
+                    if money >= 2000:
+                        money -= 2000
+                        print("# 빵20장 주문완료")
+                    else:
+                        print('잔액이 부족합니다.')
+                print("# 잔액 : ", money)
+
+            elif(number == "3") : # 재고를 실제 재고를 출력하게
+                print("# egg : ", egg)
+                print("# ham : ", ham)
+                print("# cheese : ", cheese)
+                print("# bread : ", bread)
+                print("# 잔액 : ", money)
+
+            elif(number == "4") :
+                ws['A2'] = bread
+                ws['B2'] = egg
+                ws['C2'] = cheese
+                ws['D2'] = ham
+                ws['E1'] = money
+                wb.save(file)
+                break
+
+    def Show(self) :
+        print("# 1. 새 게임")
+        print("# 2. 게임 불러오기")
+        while True :
+            try :
+                num = int(input("# 넘버 : "))
+                if(num == 1) :
+                    Toast.Start()
+                    Toast.Game()
+                    break
+                if(num == 2) :
+                    Toast.Game()
+                    break
+                else :
+                    print("정확히 입력해주세요")
+            except ValueError:
+                print("정확히 입력해주세요")
+
+aa = Toast()
+aa.Show()
